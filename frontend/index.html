@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./public/css/style.css">
-    <title>JustStreamIt</title>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar__logo">
-                <div>JustStreamIt</div>
-            </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./public/css/style.css" />
+        <title>JustStreamIt</title>
+    </head>
+    <body id="scrollbar" onscroll="changeNavbarColor()">
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar" id="navbar">
+                <div class="navbar__logo">
+                    <div>JustStreamIt</div>
+                </div>
                 <ul class="navbar__menu">
                     <li><a href="#">Accueil</a></li>
                     <li><a href="#">Categories</a></li>
                 </ul>
-        </nav>
-    </header>
-</body>
+            </nav>
+        </header>
+        <main>
+            <!-- Best film with preview -->
+            <section class="bestFilm">
+                <video class="bestFilm__video" autoplay muted loop>
+                    <source
+                        src="./assets/__mooks__/Napz x SZH 'En Avance' - Palmashow.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+                <div class="bestFilm__content">
+                    <p class="bestFilm__content-title">Titre du film</p>
+                    <button class="bestFilm__content-btn">Play</button>
+                </div>
+            </section>
+            <!-- First carousel for most rate film -->
+        </main>
+
+        <!-- Script js -->
+        <script src="./assets/js/navbar.js"></script>
+    </body>
 </html>
