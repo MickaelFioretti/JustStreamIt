@@ -1,0 +1,9 @@
+class BestMovieCarousel {
+    constructor() {
+
+    }
+
+    createBestMovieCarousel() {
+        
+    }
+}
