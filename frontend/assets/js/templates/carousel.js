@@ -13,17 +13,17 @@ function createCarousel(id, movieList) {
     // create carousel slider
     const slider = document.createElement('div');
     slider.classList.add('containerCarousel__slider');
-    slider.id = 'slider';
+    slider.id = `slider-${id}`;
 
     // create carousel buttons
     const btnLeft = document.createElement('button');
     btnLeft.classList.add('containerCarousel__btnNav', 'containerCarousel__btnNav--left');
-    btnLeft.id = 'moveLeft';
+    btnLeft.id = id;
     btnLeft.innerHTML = 'ᐊ';
 
     const btnRight = document.createElement('button');
     btnRight.classList.add('containerCarousel__btnNav', 'containerCarousel__btnNav--right');
-    btnRight.id = 'moveRight';
+    btnRight.id = id;
     btnRight.innerHTML = 'ᐅ';
 
     // add carousel buttons to carousel container
@@ -38,7 +38,7 @@ function createCarousel(id, movieList) {
     movieList.forEach(movie => {
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('containerCarousel__slider--movie');
-        movieContainer.id = 'movie';
+        movieContainer.id = `movie-${id}`;
 
         const movieImage = document.createElement('img');
         movieImage.src = movie.image_url;
@@ -47,15 +47,17 @@ function createCarousel(id, movieList) {
         slider.appendChild(movieContainer);
     });
 
-    // add event listeners to carousel buttons
+    // add event to carousel buttons
     btnLeft.addEventListener('click', scrollLeft);
     btnRight.addEventListener('click', scrollRight);
 }
 
 // Scroll to the left
-function scrollLeft() {
+function scrollLeft(e) {
+    let slider = document.querySelector('#slider-'+e.target.id);
+
     let movieWidth = document
-        .querySelector('#movie')
+        .querySelector('#movie-'+e.target.id)
         .getBoundingClientRect().width;
 
     let scrollDistance = movieWidth * 6;
@@ -68,14 +70,26 @@ function scrollLeft() {
 }
 
 // Scroll to the right
-function scrollRight() {
-    let movieWidth = document.querySelector('#movie').getBoundingClientRect().width;
+function scrollRight(e) {
+    let slider = document.querySelector('#slider-'+e.target.id);
+
+    let movieWidth = document
+        .querySelector('#movie-'+e.target.id)
+        .getBoundingClientRect().width;
 
     let scrollDistance = movieWidth * 6;
 
-    slider.scrollBy({
-        top: 0,
-        left: scrollDistance,
-        behavior: 'smooth',
-    });
+    if (slider.scrollWidth - slider.scrollLeft === slider.clientWidth) {
+        slider.scrollBy({
+            top: 0,
+            left: -slider.scrollLeft,
+            behavior: 'smooth',
+        });
+    } else {
+        slider.scrollBy({
+            top: 0,
+            left: scrollDistance,
+            behavior: 'smooth',
+        });
+    }
 }
