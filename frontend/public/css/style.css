@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /*** Variable color ***/
 /*** Font ***/
+/*** Var carousel ***/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -414,57 +415,64 @@ body {
 }
 
 /*** Preview video End ***/
-/*** Carousel Start ***/
-.carousel {
-  position: absolute;
-  top: 70vh;
-  display: grid;
-  grid-template-columns: repeat(3, 100%);
-  overflow: hidden;
-  scroll-behavior: smooth;
-}
-.carousel section {
-  width: 100%;
+/*** carousel ***/
+.bestRating {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  margin: 20px 0;
-}
-.carousel section .item {
-  padding: 0 10px;
-  transition: 250ms all;
-}
-.carousel section .item:hover {
-  margin: 0 40px;
-  transform: scale(1.2);
-}
-.carousel section a {
-  position: absolute;
-  color: #fff;
-  text-decoration: none;
-  font-size: 6em;
-  background: rgb(0, 0, 0);
-  width: 80px;
-  padding: 20px;
-  text-align: center;
-  z-index: 1;
-}
-.carousel section a:nth-of-type(1) {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
-}
-.carousel section a:nth-of-type(2) {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  top: 65vh;
 }
 
-@media only screen and (max-width: 600px) {
-  a.arrow__btn {
-    display: none;
-  }
+.containerCarousel {
+  position: relative;
 }
-/*** Carousel End ***/
+.containerCarousel__btnNav {
+  width: 50px;
+  height: 200px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  outline: none;
+  border: none;
+  color: white;
+  top: 31px;
+  z-index: 5;
+}
+.containerCarousel__btnNav--left {
+  left: 0;
+}
+.containerCarousel__btnNav--right {
+  right: 0;
+}
+.containerCarousel__slider {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding-top: 31px;
+  padding-bottom: 31px;
+}
+.containerCarousel__slider--movie {
+  width: 232px;
+  height: 200px;
+  display: inline-block;
+  position: relative;
+  color: white;
+  padding: 0 2px;
+  font-size: 0.8rem;
+  transition: all 0.8s ease-in-out;
+}
+.containerCarousel__slider--movie:hover {
+  transform: scale(1.3);
+  z-index: 2;
+}
+.containerCarousel__slider--movie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.containerCarousel__slider--movie img:hover {
+  cursor: pointer;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}

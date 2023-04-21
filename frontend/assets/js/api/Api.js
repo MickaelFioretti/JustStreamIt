@@ -13,3 +13,16 @@ class Api {
             .catch(error => console.log(error));
     }
 }
+
+class MovieApi extends Api {
+    /**
+     * @param {string} url
+     */
+    constructor(url) {
+        super(url);
+    }
+
+    async getMovie() {
+        return await this.get();
+    }
+}

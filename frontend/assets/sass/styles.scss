@@ -117,72 +117,75 @@ body {
 }
 /*** Preview video End ***/
 
-/*** Carousel Start ***/
+/*** carousel ***/
+.bestRating {
+    position: relative;
+    top: 65vh;
+}
 
-.carousel {
-    position: absolute;
-    top: 70vh;
-    display: grid;
-    grid-template-columns: repeat(3, 100%);
-    overflow: hidden;
-    scroll-behavior: smooth;
+.containerCarousel {
+    position: relative;
 
-    section {
+    &__btnNav {
+        width: $arrow-width;
+        height: $movie-height;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        outline: none;
+        border: none;
+        color: white;
+        top: $slider-py;
+        z-index: 5;
+        //visibility: hidden;
+
+        &--left {
+            left: 0;
+        }
+
+        &--right {
+            right: 0;
+        }
+    }
+
+    &__slider {
         width: 100%;
+        //overflow-x: scroll;
+        //overflow-y: visible;
+        overflow: hidden;
+        white-space: nowrap;
         position: relative;
-        display: grid;
-        grid-template-columns: repeat(5, auto);
-        margin: 20px 0;
+        padding-top: $slider-py;
+        padding-bottom: $slider-py;
 
-        .item {
-            padding: 0 10px;
-            transition: 250ms all;
+        &--movie {
+            width: $movie-width;
+            height: $movie-height;
+            display: inline-block;
+            position: relative;
+            color: white;
+            padding: 0 2px;
+            font-size: 0.8rem;
+            transition: all 0.8s ease-in-out;
 
             &:hover {
-                margin: 0 40px;
-                transform: scale(1.2);
+                transform: scale(1.3);
+                z-index: 2;
             }
-        }
 
-        a {
-            position: absolute;
-            color: #fff;
-            text-decoration: none;
-            font-size: 6em;
-            background: rgb(0, 0, 0);
-            width: 80px;
-            padding: 20px;
-            text-align: center;
-            z-index: 1;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
 
-            &:nth-of-type(1) {
-                top: 0;
-                bottom: 0;
-                left: 0;
-                background: linear-gradient(
-                    -90deg,
-                    rgba(0, 0, 0, 0) 0%,
-                    rgba(0, 0, 0, 1) 100%
-                );
-            }
-            &:nth-of-type(2) {
-                top: 0;
-                bottom: 0;
-                right: 0;
-                background: linear-gradient(
-                    90deg,
-                    rgba(0, 0, 0, 0) 0%,
-                    rgba(0, 0, 0, 1) 100%
-                );
+                &:hover {
+                    cursor: pointer;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
             }
         }
     }
 }
-
-// Remove the arrow for Mobile
-@media only screen and (max-width: 600px) {
-    a.arrow__btn {
-        display: none;
-    }
-}
-/*** Carousel End ***/
