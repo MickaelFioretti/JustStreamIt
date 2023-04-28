@@ -10,6 +10,11 @@ function createCarousel(id, movieList) {
     carousel.classList.add('containerCarousel');
     carousel.id = id;
 
+    // create carousel title
+    const title = document.createElement('h2');
+    title.classList.add('containerCarousel__title');
+    title.innerHTML = id;
+
     // create carousel slider
     const slider = document.createElement('div');
     slider.classList.add('containerCarousel__slider');
@@ -27,6 +32,7 @@ function createCarousel(id, movieList) {
     btnRight.innerHTML = 'ᐅ';
 
     // add carousel buttons to carousel container
+    carousel.appendChild(title);
     carousel.appendChild(btnLeft);
     carousel.appendChild(slider);
     carousel.appendChild(btnRight);
@@ -42,6 +48,8 @@ function createCarousel(id, movieList) {
 
         const movieImage = document.createElement('img');
         movieImage.src = movie.image_url;
+        movieImage.id = movie.id;
+        movieImage.addEventListener('click', modal);
 
         movieContainer.appendChild(movieImage);
         slider.appendChild(movieContainer);
@@ -50,6 +58,7 @@ function createCarousel(id, movieList) {
     // add event to carousel buttons
     btnLeft.addEventListener('click', scrollLeft);
     btnRight.addEventListener('click', scrollRight);
+
 }
 
 // Scroll to the left

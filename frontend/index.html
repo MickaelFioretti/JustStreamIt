@@ -23,12 +23,7 @@
         <main>
             <!-- Best film with preview -->
             <section class="bestFilm">
-                <video class="bestFilm__video" autoplay muted loop>
-                    <source
-                        src="./assets/__mooks__/Napz x SZH 'En Avance' - Palmashow.mp4"
-                        type="video/mp4"
-                    />
-                </video>
+                <img class="bestFilm__movie" id="bestFilm" src="" alt="" />
                 <div class="bestFilm__content">
                     <p class="bestFilm__content-title">Titre du film</p>
                     <button class="bestFilm__content-btn">Play</button>
@@ -46,6 +41,20 @@
 
             <!-- categori 3 serie carousel -->
             <section class="action" id="action"></section>
+
+            <!-- modal -->
+            <section class="modal" id="modal">
+                <div class="modal__content">
+                    <div>
+                        <img
+                            class="modal__content-img"
+                            id="modalImg"
+                            src="https://m.media-amazon.com/images/M/MV5BNjZhYWVhNjktNDRmNS00NGUyLThjZTgtYmU4NmQzYzIyZTk4XkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_UY268_CR0,0,182,268_AL_.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </section>
         </main>
 
         <!-- Script js -->
@@ -56,6 +65,10 @@
 
         <!-- Api -->
         <script src="./assets/js/api/Api.js"></script>
+
+        <!-- Components -->
+        <script src="./assets/js/bestMovie.js"></script>
+        <script src="./assets/js/modal.js"></script>
 
         <!-- Entry point -->
         <script src="./assets/js/App.js"></script>
