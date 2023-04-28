@@ -120,12 +120,22 @@ body {
 /*** carousel ***/
 .bestRating {
     position: relative;
-    top: 65vh;
+    top: 75vh;
 }
 
 .sciFi {
     position: relative;
-    top: 70vh;
+    top: 80vh;
+}
+
+.animation {
+    position: relative;
+    top: 85vh;
+}
+
+.action {
+    position: relative;
+    top: 90vh;
 }
 
 .containerCarousel {
@@ -143,7 +153,11 @@ body {
         color: white;
         top: $slider-py;
         z-index: 5;
-        //visibility: hidden;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
         &--left {
             left: 0;
