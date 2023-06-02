@@ -71,6 +71,11 @@ function scrollLeft(e) {
 
     let scrollDistance = movieWidth * 6;
 
+    // if screen size is smaller than 768px, scroll distance is smaller
+    if (window.innerWidth < 768) {
+        scrollDistance = movieWidth * 2;
+    }
+
     slider.scrollBy({
         top: 0,
         left: -scrollDistance,
@@ -87,6 +92,11 @@ function scrollRight(e) {
         .getBoundingClientRect().width;
 
     let scrollDistance = movieWidth * 6;
+
+    // if screen size is smaller than 768px, scroll distance is smaller
+    if (window.innerWidth < 768) {
+        scrollDistance = movieWidth * 2;
+    }
 
     if (slider.scrollWidth - slider.scrollLeft === slider.clientWidth) {
         slider.scrollBy({

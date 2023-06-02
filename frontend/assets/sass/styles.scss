@@ -45,6 +45,11 @@ body {
     width: 100%;
     z-index: 100;
 
+    // Media queries
+    @media (max-width: 768px) {
+        padding: 0 20px;
+    }
+
     &.scrolled {
         background-color: $black;
     }
@@ -55,6 +60,17 @@ body {
         font-weight: 700;
         display: grid;
         place-items: center;
+
+        // Media queries
+        @media (max-width: 768px) {
+            font-size: 1.3rem;
+        }
+
+        // Hover effect
+        &:hover {
+            color: $red;
+            cursor: pointer;
+        }
     }
 
     &__menu {
@@ -72,6 +88,11 @@ body {
                 font-size: 1.2rem;
                 font-weight: 700;
                 padding: 10px;
+
+                // Media queries
+                @media (max-width: 768px) {
+                    font-size: 0.9rem;
+                }
             }
         }
     }
@@ -98,6 +119,13 @@ body {
         align-items: center;
         display: flex;
         flex-direction: column;
+
+        // Media queries
+        @media (max-width: 768px) {
+            top: 50%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+        }
 
         &-title {
             color: $grey;
@@ -240,11 +268,11 @@ body {
     visibility: hidden;
     transform: scale(1.1);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-    z-index: 3;
+    z-index: 6;
 
     &__content {
         position: fixed;
-        top: 50%;
+        top: 57%;
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: aliceblue;
@@ -254,13 +282,19 @@ body {
         border-radius: 0.5rem;
         z-index: 4;
 
+        // media query pour la taille de la modal sur telephone
+        @media screen and (max-width: 600px) {
+            width: 300px;
+            height: 600px;
+        }
+
         &-img {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             top: -6rem;
             width: 240px;
-            height: 310px;
+            height: 280px;
             object-fit: cover;
             border-radius: 0.5rem;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -281,7 +315,6 @@ body {
             &-title {
                 font-size: 1.5rem;
                 font-weight: 700;
-                margin-top: 20px;
                 margin-bottom: 0;
             }
 
@@ -318,13 +351,17 @@ body {
                     color: #f5f5f5;
                     border-radius: 15px;
                     padding: 5px;
+
+                    // media query sur telephone 
+                    @media screen and (max-width: 600px) {
+                        font-size: 0.7rem;
+                    }
                 }
             }
 
             &-director {
                 font-size: 0.9rem;
                 font-weight: 700;
-                width: 70%;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -356,6 +393,7 @@ body {
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
+                margin: 15px;
 
                 p {
                     // text with 3 lines max anf overflow hidden
@@ -364,6 +402,25 @@ body {
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    text-align: center;
+                }
+            }
+
+            &-actor {
+                // Fait une liste et que quand ces trop grand sa scroll ver la droite
+                font-size: 0.9rem;
+                font-weight: 700;
+                width: 100%;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: nowrap;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 15px;
+
+                p {
+                    margin: 0 6px;
                 }
             }
         }
