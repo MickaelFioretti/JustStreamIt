@@ -28,9 +28,7 @@
             <!-- Best film with preview -->
             <section class="bestFilm">
                 <img class="bestFilm__movie" id="bestFilm" src="" alt="" />
-                <div class="bestFilm__content">
-                    <p class="bestFilm__content-title">Titre du film</p>
-                    <button class="bestFilm__content-btn">Play</button>
+                <div class="bestFilm__content" id="bestFilmInfo">
                 </div>
             </section>
 
@@ -75,14 +73,15 @@
                             </p>
                         </div>
                         <!-- genre -->
-                        <div class="modal__content-info-genre">
+                        <div class="modal__content-info-genre" id="modalGenre">
                             <p>Action</p>
                             <p>Comedy</p>
                             <p>Drama</p>
                         </div>
                         <!-- realisateur -->
-                        <div class="modal__content-info-director">
+                        <div class="modal__content-info-director" id="modalDirector">
                             <p>Director :</p>
+                            <p>Quentin Tarantino</p>
                             <p>Quentin Tarantino</p>
                         </div>
                         <!-- contry -->
@@ -92,7 +91,8 @@
                         </div>
                         <!-- description -->
                         <div class="modal__content-info-description">
-                            <p>
+                            <p id="modalDescription">
+                                Description :
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Quisquam, voluptatum
                                 voluptates. Quisquam, voluptatum voluptates.
@@ -107,7 +107,7 @@
                             </p>
                         </div>
                         <!-- Actor -->
-                        <div class="modal__content-info-actor">
+                        <div class="modal__content-info-actor" id="modalActors">
                             <p>Actor :</p>
                             <p>Brad Pitt</p>
                             <p>Leonardo DiCaprio</p>
