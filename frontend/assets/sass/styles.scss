@@ -288,6 +288,24 @@ body {
             height: 550px;
         }
 
+        &-btnClose {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: $red;
+            border: none;
+            background-color: transparent;
+            outline: none;
+
+            // media query
+            @media screen and (max-width: 600px) {
+                font-size: 1.5rem;
+                right: 0.5rem;
+            }
+        }
+
         &-img {
             position: absolute;
             left: 50%;

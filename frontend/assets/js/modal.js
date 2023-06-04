@@ -1,6 +1,15 @@
 function modal(e) {
     const modalNode = document.querySelector('#modal');
     modalNode.classList.toggle('show-modal');
+    // button to close modal
+    const closeBtn = document.querySelector('#modalClose');
+    closeBtn.addEventListener('click', () => {
+        if (modalNode.classList.contains('show-modal')) {
+            modalNode.classList.toggle('show-modal');
+        }
+    });
+
+    // fetch data from API and add it to modal
     fetch(`http://127.0.0.1:8000/api/v1/titles/${e.target.id}`)
         .then(response => response.json())
         .then(data => {
