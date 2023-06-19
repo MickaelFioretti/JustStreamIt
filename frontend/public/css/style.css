@@ -311,16 +311,15 @@ template {
   display: none;
 }
 
-* {
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-}
-
 body {
   background-color: #141414;
   padding: 0;
   height: 1500px;
+}
+body :nth-child(n) {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 
 /*** Scrollbar Start ***/
@@ -366,7 +365,7 @@ body {
   font-size: 1.6rem;
   font-weight: 700;
   display: grid;
-  place-items: center;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .navbar__logo {
@@ -485,12 +484,11 @@ body {
   border-radius: 5px;
   position: absolute;
   bottom: 0;
-  top: 58px !important;
+  top: 58px;
   background-color: rgba(0, 0, 0, 0.3);
   outline: none;
   border: none;
   color: white;
-  top: 31px;
   z-index: 5;
   cursor: pointer;
 }
@@ -604,7 +602,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.modal__content-info > * {
+.modal__content-info :nth-child(n) {
   height: 40px;
   margin: 0;
 }
@@ -725,7 +723,6 @@ body {
 .show-modal {
   opacity: 1;
   visibility: visible;
-  display: hidden;
   transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }

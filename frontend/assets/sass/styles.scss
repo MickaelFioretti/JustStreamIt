@@ -1,477 +1,477 @@
 @import "vars.scss";
 @import "reset.scss";
 
-* {
-    box-sizing: border-box;
-    //border: 1px solid white;
-    text-decoration: none;
-    font-family: $font;
-}
+// pour tous les éléments
 
 body {
-    background-color: $black;
-    padding: 0;
-    // temporary
-    height: 1500px;
+	background-color: $black;
+	padding: 0;
+	// temporary
+	height: 1500px;
+
+	:nth-child(n) {
+		box-sizing: border-box;
+		//border: 1px solid white;
+		text-decoration: none;
+		font-family: $font;
+	}
 }
 
 /*** Scrollbar Start ***/
 #scrollbar::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #f5f5f5;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #f5f5f5;
 }
 
 #scrollbar::-webkit-scrollbar {
-    width: 6px;
-    background-color: #f5f5f5;
+	width: 6px;
+	background-color: #f5f5f5;
 }
 
 #scrollbar::-webkit-scrollbar-thumb {
-    background-color: $red;
-    border-radius: 10px;
+	background-color: $red;
+	border-radius: 10px;
 }
 /*** Scrollbar End ***/
 
 /*** Navbar Start ***/
 .navbar {
-    background-color: transparent;
-    transition: background-color 0.5s ease;
-    display: flex;
-    flex-direction: row;
-    max-height: 100px;
-    padding: 0 40px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+	background-color: transparent;
+	transition: background-color 0.5s ease;
+	display: flex;
+	flex-direction: row;
+	max-height: 100px;
+	padding: 0 40px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
 
-    // Media queries
-    @media (max-width: 768px) {
-        padding: 0 20px;
-    }
+	// Media queries
+	@media (max-width: 768px) {
+		padding: 0 20px;
+	}
 
-    &.scrolled {
-        background-color: $black;
-    }
+	&.scrolled {
+		background-color: $black;
+	}
 
-    &__logo {
-        color: $red;
-        font-size: 1.6rem;
-        font-weight: 700;
-        display: grid;
-        place-items: center;
+	&__logo {
+		color: $red;
+		font-size: 1.6rem;
+		font-weight: 700;
+		display: grid;
+		align-items: center;
 
-        // Media queries
-        @media (max-width: 768px) {
-            font-size: 1.3rem;
-        }
+		// Media queries
+		@media (max-width: 768px) {
+			font-size: 1.3rem;
+		}
 
-        // Hover effect
-        &:hover {
-            color: $red;
-            cursor: pointer;
-        }
-    }
+		// Hover effect
+		&:hover {
+			color: $red;
+			cursor: pointer;
+		}
+	}
 
-    &__menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
+	&__menu {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 100%;
 
-        li {
-            list-style: none;
-            margin: 0 10px;
+		li {
+			list-style: none;
+			margin: 0 10px;
 
-            a {
-                color: $grey;
-                font-size: 1.2rem;
-                font-weight: 700;
-                padding: 10px;
+			a {
+				color: $grey;
+				font-size: 1.2rem;
+				font-weight: 700;
+				padding: 10px;
 
-                // Media queries
-                @media (max-width: 768px) {
-                    font-size: 0.9rem;
-                }
-            }
-        }
-    }
+				// Media queries
+				@media (max-width: 768px) {
+					font-size: 0.9rem;
+				}
+			}
+		}
+	}
 }
 /*** Navbar End ***/
 
 /*** Preview movie Start ***/
 .bestFilm {
-    &__movie {
-        position: absolute;
-        width: 100%;
-        height: 65vh;
-        object-fit: fill;
-        z-index: -1;
-    }
+	&__movie {
+		position: absolute;
+		width: 100%;
+		height: 65vh;
+		object-fit: fill;
+		z-index: -1;
+	}
 
-    &__content {
-        position: absolute;
-        top: 40%;
-        left: 13%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
+	&__content {
+		position: absolute;
+		top: 40%;
+		left: 13%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
 
-        // Media queries
-        @media (max-width: 768px) {
-            top: 50%;
-            left: 35%;
-            transform: translate(-50%, -50%);
-        }
+		// Media queries
+		@media (max-width: 768px) {
+			top: 50%;
+			left: 35%;
+			transform: translate(-50%, -50%);
+		}
 
-        &-title {
-            color: $grey;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+		&-title {
+			color: $grey;
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
 
-        &-btn {
-            color: $grey;
-            background-color: $red;
-            border: none;
-            border-radius: 5px;
-            padding: 7px 10px;
-            cursor: pointer;
-        }
-    }
+		&-btn {
+			color: $grey;
+			background-color: $red;
+			border: none;
+			border-radius: 5px;
+			padding: 7px 10px;
+			cursor: pointer;
+		}
+	}
 }
 /*** Preview video End ***/
 
 /*** carousel ***/
 .bestRating {
-    position: relative;
-    top: 75vh;
+	position: relative;
+	top: 75vh;
 }
 
 .sciFi {
-    position: relative;
-    top: 80vh;
+	position: relative;
+	top: 80vh;
 }
 
 .animation {
-    position: relative;
-    top: 85vh;
+	position: relative;
+	top: 85vh;
 }
 
 .action {
-    position: relative;
-    top: 90vh;
+	position: relative;
+	top: 90vh;
 }
 
 .containerCarousel {
-    position: relative;
+	position: relative;
 
-    &__title {
-        position: relative;
-        padding: 0;
-        margin: 0;
-        left: 20px;
-        color: $grey;
-        font-size: 1.5rem;
-        font-weight: 700;
-        width: 100px;
+	&__title {
+		position: relative;
+		padding: 0;
+		margin: 0;
+		left: 20px;
+		color: $grey;
+		font-size: 1.5rem;
+		font-weight: 700;
+		width: 100px;
 
-        &::first-letter {
-            text-transform: uppercase;
-        }
-    }
+		&::first-letter {
+			text-transform: uppercase;
+		}
+	}
 
-    &__btnNav {
-        width: $arrow-width;
-        height: $movie-height;
-        border-radius: 5px;
-        position: absolute;
-        bottom: 0;
-        top: 58px !important;
-        background-color: rgba(0, 0, 0, 0.3);
-        outline: none;
-        border: none;
-        color: white;
-        top: $slider-py;
-        z-index: 5;
-        cursor: pointer;
+	&__btnNav {
+		width: $arrow-width;
+		height: $movie-height;
+		border-radius: 5px;
+		position: absolute;
+		bottom: 0;
+		top: 58px;
+		background-color: rgba(0, 0, 0, 0.3);
+		outline: none;
+		border: none;
+		color: white;
+		z-index: 5;
+		cursor: pointer;
 
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
 
-        &--left {
-            left: 0;
-        }
+		&--left {
+			left: 0;
+		}
 
-        &--right {
-            right: 0;
-        }
-    }
+		&--right {
+			right: 0;
+		}
+	}
 
-    &__slider {
-        width: 100%;
-        //overflow-x: scroll;
-        //overflow-y: visible;
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-        padding-top: $slider-py;
-        padding-bottom: $slider-py;
+	&__slider {
+		width: 100%;
+		//overflow-x: scroll;
+		//overflow-y: visible;
+		overflow: hidden;
+		white-space: nowrap;
+		position: relative;
+		padding-top: $slider-py;
+		padding-bottom: $slider-py;
 
-        &--movie {
-            width: $movie-width;
-            height: $movie-height;
-            display: inline-block;
-            position: relative;
-            color: white;
-            padding: 0 2px;
-            font-size: 0.8rem;
-            transition: all 0.8s ease-in-out;
+		&--movie {
+			width: $movie-width;
+			height: $movie-height;
+			display: inline-block;
+			position: relative;
+			color: white;
+			padding: 0 2px;
+			font-size: 0.8rem;
+			transition: all 0.8s ease-in-out;
 
-            &:hover {
-                transform: scale(1.3);
-                z-index: 2;
-            }
+			&:hover {
+				transform: scale(1.3);
+				z-index: 2;
+			}
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 10px;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 10px;
 
-                &:hover {
-                    cursor: pointer;
-                    border-bottom-left-radius: 0;
-                    border-bottom-right-radius: 0;
-                }
-            }
-        }
-    }
+				&:hover {
+					cursor: pointer;
+					border-bottom-left-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+			}
+		}
+	}
 }
 
 /*** carousel end ***/
 
 /*** modal start ***/
 .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-    z-index: 6;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(1.1);
+	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+	z-index: 6;
 
-    &__content {
-        position: fixed;
-        top: 57%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: aliceblue;
-        padding: 2rem 2.5rem;
-        width: 400px;
-        height: 550px;
-        border-radius: 0.5rem;
-        z-index: 4;
+	&__content {
+		position: fixed;
+		top: 57%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: aliceblue;
+		padding: 2rem 2.5rem;
+		width: 400px;
+		height: 550px;
+		border-radius: 0.5rem;
+		z-index: 4;
 
-        // media query pour la taille de la modal sur telephone
-        @media screen and (max-width: 600px) {
-            width: 300px;
-            height: 550px;
-        }
+		// media query pour la taille de la modal sur telephone
+		@media screen and (max-width: 600px) {
+			width: 300px;
+			height: 550px;
+		}
 
-        &-btnClose {
-            position: absolute;
-            right: 1rem;
-            top: 1rem;
-            font-size: 2rem;
-            cursor: pointer;
-            color: $red;
-            border: none;
-            background-color: transparent;
-            outline: none;
+		&-btnClose {
+			position: absolute;
+			right: 1rem;
+			top: 1rem;
+			font-size: 2rem;
+			cursor: pointer;
+			color: $red;
+			border: none;
+			background-color: transparent;
+			outline: none;
 
-            // media query
-            @media screen and (max-width: 600px) {
-                font-size: 1.5rem;
-                right: 0.5rem;
-            }
-        }
+			// media query
+			@media screen and (max-width: 600px) {
+				font-size: 1.5rem;
+				right: 0.5rem;
+			}
+		}
 
-        &-img {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -6rem;
-            width: 240px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 0.5rem;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
+		&-img {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			top: -6rem;
+			width: 240px;
+			height: 280px;
+			object-fit: cover;
+			border-radius: 0.5rem;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+		}
 
-        &-info {
-            margin-top: 11rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+		&-info {
+			margin-top: 11rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 
-            // definir la height de tous les enfants a 40 px
-            & > * {
-                height: 40px;
-                margin: 0;
-            }
+			// definir la height de tous les enfants a 40 px
+			:nth-child(n) {
+				height: 40px;
+				margin: 0;
+			}
 
-            &-title {
-                font-size: 1.5rem;
-                font-weight: 700;
-                margin-bottom: 0;
-            }
+			&-title {
+				font-size: 1.5rem;
+				font-weight: 700;
+				margin-bottom: 0;
+			}
 
-            &-rating {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
+			&-rating {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
 
-                p {
-                    font-size: 1.2rem;
-                    font-weight: 700;
-                    margin-right: 0.5rem;
-                }
-            }
+				p {
+					font-size: 1.2rem;
+					font-weight: 700;
+					margin-right: 0.5rem;
+				}
+			}
 
-            &-duration {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-            }
+			&-duration {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+			}
 
-            &-genre {
-                font-size: 0.9rem;
-                font-weight: 700;
-                width: 70%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                align-items: center;
+			&-genre {
+				font-size: 0.9rem;
+				font-weight: 700;
+				width: 70%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				align-items: center;
 
-                p {
-                    background-color: #55b978;
-                    color: #f5f5f5;
-                    border-radius: 15px;
-                    padding: 5px;
+				p {
+					background-color: #55b978;
+					color: #f5f5f5;
+					border-radius: 15px;
+					padding: 5px;
 
-                    // media query sur telephone 
-                    @media screen and (max-width: 600px) {
-                        font-size: 0.7rem;
-                    }
-                }
-            }
+					// media query sur telephone
+					@media screen and (max-width: 600px) {
+						font-size: 0.7rem;
+					}
+				}
+			}
 
-            &-director {
-                font-size: 0.9rem;
-                font-weight: 700;
-                width: 100%;
-                overflow-x: scroll;
-                overflow-y: hidden;
-                white-space: nowrap;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
+			&-director {
+				font-size: 0.9rem;
+				font-weight: 700;
+				width: 100%;
+				overflow-x: scroll;
+				overflow-y: hidden;
+				white-space: nowrap;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
 
-                // style pour le scroll horizontal
-                &::-webkit-scrollbar {
-                    height: 5px;
-                }
+				// style pour le scroll horizontal
+				&::-webkit-scrollbar {
+					height: 5px;
+				}
 
-                &::-webkit-scrollbar-thumb {
-                    background-color: gray;
-                    border-radius: 10px;
-                }
+				&::-webkit-scrollbar-thumb {
+					background-color: gray;
+					border-radius: 10px;
+				}
 
-                p {
-                    margin: 0 6px;
-                }
-            }
+				p {
+					margin: 0 6px;
+				}
+			}
 
-            &-country {
-                font-size: 0.9rem;
-                font-weight: 700;
-                width: 70%;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
+			&-country {
+				font-size: 0.9rem;
+				font-weight: 700;
+				width: 70%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
 
-                p {
-                    padding: 5px;
-                }
-            }
+				p {
+					padding: 5px;
+				}
+			}
 
-            &-description {
-                font-size: 0.9rem;
-                font-weight: 700;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
+			&-description {
+				font-size: 0.9rem;
+				font-weight: 700;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
 
-                p {
-                    // text with 3 lines max anf overflow hidden
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    text-align: center;
-                }
-            }
+				p {
+					// text with 3 lines max anf overflow hidden
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					text-align: center;
+				}
+			}
 
-            &-actor {
-                // Fait une liste et que quand ces trop grand sa scroll ver la droite
-                font-size: 0.9rem;
-                font-weight: 700;
-                width: 100%;
-                overflow-x: scroll;
-                overflow-y: hidden;
-                white-space: nowrap;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                margin: 15px;
+			&-actor {
+				// Fait une liste et que quand ces trop grand sa scroll ver la droite
+				font-size: 0.9rem;
+				font-weight: 700;
+				width: 100%;
+				overflow-x: scroll;
+				overflow-y: hidden;
+				white-space: nowrap;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				margin: 15px;
 
-                // style pour le scroll horizontal
-                &::-webkit-scrollbar {
-                    height: 5px;
-                }
+				// style pour le scroll horizontal
+				&::-webkit-scrollbar {
+					height: 5px;
+				}
 
-                &::-webkit-scrollbar-thumb {
-                    background-color: gray;
-                    border-radius: 10px;
-                }
+				&::-webkit-scrollbar-thumb {
+					background-color: gray;
+					border-radius: 10px;
+				}
 
-                p {
-                    margin: 0 6px;
-                }
-            }
-        }
-    }
+				p {
+					margin: 0 6px;
+				}
+			}
+		}
+	}
 }
 
 .show-modal {
-    opacity: 1;
-    visibility: visible;
-    display: hidden;
-    transform: scale(1);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
