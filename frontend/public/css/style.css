@@ -311,15 +311,16 @@ template {
   display: none;
 }
 
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   background-color: #141414;
   padding: 0;
   height: 1500px;
-}
-body :nth-child(n) {
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
 }
 
 /*** Scrollbar Start ***/
@@ -365,7 +366,7 @@ body :nth-child(n) {
   font-size: 1.6rem;
   font-weight: 700;
   display: grid;
-  align-items: center;
+  place-items: center;
 }
 @media (max-width: 768px) {
   .navbar__logo {
@@ -484,11 +485,12 @@ body :nth-child(n) {
   border-radius: 5px;
   position: absolute;
   bottom: 0;
-  top: 58px;
+  top: 58px !important;
   background-color: rgba(0, 0, 0, 0.3);
   outline: none;
   border: none;
   color: white;
+  top: 31px;
   z-index: 5;
   cursor: pointer;
 }
@@ -558,14 +560,14 @@ body :nth-child(n) {
   background-color: aliceblue;
   padding: 2rem 2.5rem;
   width: 400px;
-  height: 550px;
+  height: 585px;
   border-radius: 0.5rem;
   z-index: 4;
 }
 @media screen and (max-width: 600px) {
   .modal__content {
     width: 300px;
-    height: 550px;
+    height: 585px;
   }
 }
 .modal__content-btnClose {
@@ -602,7 +604,7 @@ body :nth-child(n) {
   flex-direction: column;
   align-items: center;
 }
-.modal__content-info :nth-child(n) {
+.modal__content-info > * {
   height: 40px;
   margin: 0;
 }
@@ -617,6 +619,16 @@ body :nth-child(n) {
   justify-content: center;
 }
 .modal__content-info-rating p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.modal__content-info-vote {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.modal__content-info-vote p {
   font-size: 1.2rem;
   font-weight: 700;
   margin-right: 0.5rem;
