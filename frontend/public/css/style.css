@@ -366,7 +366,7 @@ body {
   font-size: 1.6rem;
   font-weight: 700;
   display: grid;
-  place-items: center;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .navbar__logo {
@@ -490,7 +490,6 @@ body {
   outline: none;
   border: none;
   color: white;
-  top: 31px;
   z-index: 5;
   cursor: pointer;
 }
